@@ -131,44 +131,6 @@
   </div>
 </section>
 
- <!-- Video Examples  
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-    <h1 class="title is-3 has-text-centered">lanerf in the Wild </h1>
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-           <video id="dollyzoom" autoplay controls muted loop height="70%" width="70%">
-            <source source src="https://lanerf.github.io/lanerf/static/images/lanerf_in_the_wild.mp4"
-                    type="video/mp4">
-          </video>
-          </div>
-        </div>
-      <h1 class="title is-3 has-text-centered">lanerf on Autonomous Driving Scenes (KITTI)</h1>
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-            <video id="matting-video" autoplay controls muted loop height="70%" width="70%">
-              <source src="./static/images/lanerf_on_kitti.mp4"
-                    type="video/mp4">
-            </video>
-        </div>
-      </div>
-      <h1 class="title is-3 has-text-centered">lanerf on Autonomous Driving Scenes (BDD100K)</h1>
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-            <video id="matting-video" autoplay controls muted loop height="70%" width="70%">
-              <source src="./static/images/lanerf_on_bdd100k.mp4"
-                    type="video/mp4">
-            </video>
-        </div>
-      </div>
-</section>
-
-    </div>
-  </div>
-</section>
--->
-
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
@@ -182,13 +144,13 @@
             object fields do not consider the problem of composing objects into different world fields in a lighting-aware manner. 
           </p>
           <p>
-            We present Lighting-Aware Neural Field (LANe) for compositional synthesis of driving scenes in a physical consistent manner. 
+            We present Lighting-Aware Neural Field (LANe) for the compositional synthesis of driving scenes in a physically consistent manner. 
             Specifically, we learn a scene representation that disentangles the static background and transient elements into a world-NeRF and 
-            class-specific object-NeRFs to allow compositional synthesis of multiple objects in the scene. Furthermore, we equip both the world 
-            and object models to handle lighting variation, which allows us to compose objects into scenes with spatially varying lighting. This 
-            is achieved by constructing a light field of the scene and modulating the radiance of the object-NeRF with an attention mechanism 
-            over the learnt light field. We demonstrate the performance of our model on a particularly challenging dataset rendered with the 
-            CARLA simulator. 
+            class-specific object-NeRFs to allow compositional synthesis of multiple objects in the scene. Furthermore, we explicitly designed 
+            both the world and object models to handle lighting variation, which allows us to compose objects into scenes with spatially varying 
+            lighting. This is achieved by constructing a light field of the scene and using it in conjunction with a learned shader to modulate
+            the appearance of the object NeRFs. We demonstrate the performance of our model on a synthetic dataset of diverse lighting conditions 
+            rendered with the CARLA simulator, as well as a novel real-world dataset of cars collected at different times of the day.
           </p>
            <p>
             Our approach composes objects learned from one scene into an entirely different scene whilst still respecting the lighting 
@@ -252,20 +214,12 @@
   <div class="hero-body">
     <div class="container is-max-desktop">
             <h2 class="title is-3 has-text-centered" center>Downstream Task Validation</h2>
-            <!-- Downstream task
-            <div class="columns is-centered has-text-centered">
-            <video id="dollyzoom" autoplay controls muted loop height="80%" width="80%">
-                <source source src="https://abc/centertrack_results_collage_720p.mp4"
-                    type="video/mp4">
-            </video>
-          </div>
-           --> 
         <p>
           The lack of diversity in lighting condition is a known issue with manually curated autonomous driving datasets. For 
-          instance, KITTI dataset\cite{geiger2013vision} has captured around the noon time, with similar lighting and shadow 
-          conditions across different sequences. lanerf \cite{ZhangTSBJ22} demonstrated that deep learning models trained with such 
+          instance, the <a href="https://www.cvlibs.net/datasets/kitti/">KITTI dataset</a> was captured around the noon time, with similar lighting and shadow 
+          conditions across different sequences. SIMBAR <a href="https://arxiv.org/abs/2204.00644"> demonstrated that deep learning models trained with such 
           limited lighting conditions are unable to generalize to the plethora of lighting conditions encountered in the real-world, 
-          and validated the effectiveness of scene relighting as a useful data augmentation methodology for vision tasks.Our 
+          and validated the effectiveness of scene relighting as a useful data augmentation methodology for vision tasks. Our 
           approach LANe can be leveraged for lighting-aware data manipulation and data augmentation for downstream autonomous 
           driving vision tasks.
         </p>
